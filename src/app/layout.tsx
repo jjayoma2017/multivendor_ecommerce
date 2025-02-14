@@ -1,15 +1,16 @@
 // Next.js
 import type { Metadata } from "next";
-import { Inter,Barlow } from "next/font/google";
+import { Inter, Barlow } from "next/font/google";
 // Global css
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
 // Fonts
-const interFont = Inter({subsets: ['latin']});
+const interFont = Inter({ subsets: ['latin'] });
 
 const barlowFont = Barlow({
   subsets: ['latin'],
-  weight: ['500','700'],
+  weight: ['500', '700'],
   variable: "--font-barlow"
 })
 
@@ -25,11 +26,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${interFont.className} ${barlowFont.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
