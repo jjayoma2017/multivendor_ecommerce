@@ -10,22 +10,23 @@ import {
   SignInButton,
   SignedIn,
   SignedOut,
-  UserButton
-} from '@clerk/nextjs'
+  UserButton,
+} from "@clerk/nextjs";
 
 // Fonts
-const interFont = Inter({ subsets: ['latin'] });
+const interFont = Inter({ subsets: ["latin"] });
 
 const barlowFont = Barlow({
-  subsets: ['latin'],
-  weight: ['500', '700'],
-  variable: "--font-barlow"
-})
+  subsets: ["latin"],
+  weight: ["500", "700"],
+  variable: "--font-barlow",
+});
 
 // Metadata
 export const metadata: Metadata = {
   title: "GoShop",
-  description: "Welcome to GoShop, your ultimate destination for seamless online shopping! Discover a vast products",
+  description:
+    "Welcome to GoShop, your ultimate destination for seamless online shopping! Discover a vast products",
 };
 
 export default function RootLayout({
